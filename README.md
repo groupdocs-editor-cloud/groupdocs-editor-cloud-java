@@ -24,7 +24,7 @@ Add following repository and dependency to your project's POM
 <dependency>
     <groupId>com.groupdocs</groupId>
     <artifactId>groupdocs-editor-cloud</artifactId>
-    <version>21.7</version>
+    <version>22.5</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -43,7 +43,7 @@ repositories {
 ...
 dependencies {
     ...
-    implementation 'com.groupdocs:groupdocs-editor-cloud:21.7'
+    implementation 'com.groupdocs:groupdocs-editor-cloud:22.5'
 }
 ```
 
@@ -100,7 +100,7 @@ mvn package -D maven.test.skip=true
 
 Then manually install the following JARs:
 
-* target/groupdocs-editor-cloud-21.7.jar
+* target/groupdocs-editor-cloud-22.5.jar
 * target/lib/*.jar
 
 ## Licensing

@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="LoadResult.java">
+ * <copyright company="Aspose Pty Ltd" file="ConsumptionResult.java">
  *   Copyright (c) 2003-2022 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,52 +36,53 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
- * Describes load result
+ * Metered license consumption information
  */
-@ApiModel(description = "Describes load result")
-public class LoadResult {
-  @SerializedName("htmlPath")
-  private String htmlPath = null;
+@ApiModel(description = "Metered license consumption information")
+public class ConsumptionResult {
+  @SerializedName("credit")
+  private BigDecimal credit = null;
 
-  @SerializedName("resourcesPath")
-  private String resourcesPath = null;
+  @SerializedName("quantity")
+  private BigDecimal quantity = null;
 
-  public LoadResult htmlPath(String htmlPath) {
-    this.htmlPath = htmlPath;
+  public ConsumptionResult credit(BigDecimal credit) {
+    this.credit = credit;
     return this;
   }
 
    /**
-   * Path of the editable document
-   * @return htmlPath
+   * Amount of used credits
+   * @return credit
   **/
-  @ApiModelProperty(value = "Path of the editable document")
-  public String getHtmlPath() {
-    return htmlPath;
+  @ApiModelProperty(required = true, value = "Amount of used credits")
+  public BigDecimal getCredit() {
+    return credit;
   }
 
-  public void setHtmlPath(String htmlPath) {
-    this.htmlPath = htmlPath;
+  public void setCredit(BigDecimal credit) {
+    this.credit = credit;
   }
 
-  public LoadResult resourcesPath(String resourcesPath) {
-    this.resourcesPath = resourcesPath;
+  public ConsumptionResult quantity(BigDecimal quantity) {
+    this.quantity = quantity;
     return this;
   }
 
    /**
-   * Path of the document resources
-   * @return resourcesPath
+   * Amount of MBs processed
+   * @return quantity
   **/
-  @ApiModelProperty(value = "Path of the document resources")
-  public String getResourcesPath() {
-    return resourcesPath;
+  @ApiModelProperty(required = true, value = "Amount of MBs processed")
+  public BigDecimal getQuantity() {
+    return quantity;
   }
 
-  public void setResourcesPath(String resourcesPath) {
-    this.resourcesPath = resourcesPath;
+  public void setQuantity(BigDecimal quantity) {
+    this.quantity = quantity;
   }
 
 
@@ -93,24 +94,24 @@ public class LoadResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LoadResult loadResult = (LoadResult) o;
-    return Objects.equals(this.htmlPath, loadResult.htmlPath) &&
-        Objects.equals(this.resourcesPath, loadResult.resourcesPath);
+    ConsumptionResult consumptionResult = (ConsumptionResult) o;
+    return Objects.equals(this.credit, consumptionResult.credit) &&
+        Objects.equals(this.quantity, consumptionResult.quantity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(htmlPath, resourcesPath);
+    return Objects.hash(credit, quantity);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LoadResult {\n");
+    sb.append("class ConsumptionResult {\n");
     
-    sb.append("    htmlPath: ").append(toIndentedString(htmlPath)).append("\n");
-    sb.append("    resourcesPath: ").append(toIndentedString(resourcesPath)).append("\n");
+    sb.append("    credit: ").append(toIndentedString(credit)).append("\n");
+    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
     sb.append("}");
     return sb.toString();
   }
