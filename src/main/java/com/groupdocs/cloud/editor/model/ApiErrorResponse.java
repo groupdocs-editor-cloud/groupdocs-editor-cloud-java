@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="GetInfoRequest.java">
+ * <copyright company="Aspose Pty Ltd" file="ApiErrorResponse.java">
  *   Copyright (c) Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -25,7 +25,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-package com.groupdocs.cloud.editor.model.requests;
+package com.groupdocs.cloud.editor.model;
 
 import java.util.Objects;
 import com.google.gson.TypeAdapter;
@@ -33,73 +33,84 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.groupdocs.cloud.editor.model.*;
+import com.groupdocs.cloud.editor.model.ApiError;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.io.File;
 
 /**
- * Request model for getInfo method.
+ * ApiErrorResponse
  */
-public class GetInfoRequest {
-    
-    /**
-    * Initializes a new instance of the GetInfoRequest class.
-    */      
-    public GetInfoRequest()
-    {
-    }
+public class ApiErrorResponse {
+  @SerializedName("requestId")
+  private String requestId = null;
 
-    /**
-    * Initializes a new instance of the GetInfoRequest class.    
-    * @param fileInfo File Info
-    */
-    public GetInfoRequest(FileInfo fileInfo)
-    {
-        this.fileInfo = fileInfo;
-    }
+  @SerializedName("error")
+  private ApiError error = null;
 
-  @SerializedName("fileInfo")
-  private FileInfo fileInfo = null;
+  public ApiErrorResponse requestId(String requestId) {
+    this.requestId = requestId;
+    return this;
+  }
 
-  /**
-   * File Info
-   * @return File Info
+   /**
+   * Get requestId
+   * @return requestId
   **/
-  @ApiModelProperty(example = "new FileInfo()", required = true, value = "File Info")
-  public FileInfo getfileInfo() {
-    return fileInfo;
+  @ApiModelProperty(value = "")
+  public String getRequestId() {
+    return requestId;
   }
 
-  public void setfileInfo(FileInfo fileInfo) {
-    this.fileInfo = fileInfo;
+  public void setRequestId(String requestId) {
+    this.requestId = requestId;
   }
+
+  public ApiErrorResponse error(ApiError error) {
+    this.error = error;
+    return this;
+  }
+
+   /**
+   * Get error
+   * @return error
+  **/
+  @ApiModelProperty(value = "")
+  public ApiError getError() {
+    return error;
+  }
+
+  public void setError(ApiError error) {
+    this.error = error;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
-
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    
-    GetInfoRequest request = (GetInfoRequest) o;
-    return Objects.equals(this.fileInfo, request.fileInfo);
+    ApiErrorResponse apiErrorResponse = (ApiErrorResponse) o;
+    return Objects.equals(this.requestId, apiErrorResponse.requestId) &&
+        Objects.equals(this.error, apiErrorResponse.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileInfo);
+    return Objects.hash(requestId, error);
   }
+
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetInfo {\n");
-    sb.append("    fileInfo: ").append(toIndentedString(fileInfo)).append("\n");
+    sb.append("class ApiErrorResponse {\n");
+    
+    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -114,5 +125,6 @@ public class GetInfoRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
 
